@@ -98,4 +98,15 @@ class CafeKioskTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("주문 시간이 아닙니다.");
     }
+
+    @Test
+    void calculateTotalPrice() {
+        CafeKiosk cafeKiosk = new CafeKiosk();
+        Americano americano = new Americano();
+        Latte latte = new Latte();
+        cafeKiosk.add(americano, 1);
+        cafeKiosk.add(latte, 1);
+        int totalPrice = cafeKiosk.calculateTotalPrice();
+        assertThat(totalPrice).isEqualTo(8500);
+    }
 }

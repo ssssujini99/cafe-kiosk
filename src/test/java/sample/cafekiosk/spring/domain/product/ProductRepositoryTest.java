@@ -55,7 +55,7 @@ class ProductRepositoryTest {
 
         // then
         assertThat(products).hasSize(2)
-                .extracting("productNumber", "name", "sellingStatus")
+                .extracting("productNumber", "name", "sellingStatus") // 검증하고자 하는 필드만 추출
                 .containsExactlyInAnyOrder(
                         tuple("001", "아메리카노", ProductSellingStatus.SELLING),
                         tuple("002", "카페라떼", ProductSellingStatus.HOLD)
